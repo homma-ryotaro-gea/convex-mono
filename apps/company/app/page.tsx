@@ -23,21 +23,6 @@ export default function Home() {
 				<div className="flex items-center gap-3">
 					<div className="flex items-center gap-3">
 						<Image src="/convex.svg" alt="Convex Logo" width={32} height={32} />
-						<div className="w-px h-8 bg-slate-300 dark:bg-slate-600"></div>
-						<Image
-							src="/nextjs-icon-light-background.svg"
-							alt="Next.js Logo"
-							width={32}
-							height={32}
-							className="dark:hidden"
-						/>
-						<Image
-							src="/nextjs-icon-dark-background.svg"
-							alt="Next.js Logo"
-							width={32}
-							height={32}
-							className="hidden dark:block"
-						/>
 					</div>
 					<h1 className="font-semibold text-slate-800 dark:text-slate-200">
 						Company Dashboard
@@ -233,6 +218,7 @@ function ResourceCard({
 			href={href}
 			className="flex flex-col gap-2 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 p-5 rounded-xl h-36 overflow-auto border border-slate-300 dark:border-slate-600 hover:border-slate-400 dark:hover:border-slate-500 shadow-sm hover:shadow-md transition-all duration-200 hover:scale-[1.02] group cursor-pointer"
 			target="_blank"
+			rel="noreferrer"
 		>
 			<h3 className="text-sm font-semibold text-slate-700 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-slate-100 transition-colors">
 				{title} →

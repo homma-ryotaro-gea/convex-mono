@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "@workspace/ui/globals.css";
 import ConvexClientProvider from "@/components/ConvexClientProvider";
-import { Providers } from "@/components/providers";
 
 const fontSans = Geist({
 	subsets: ["latin"],
