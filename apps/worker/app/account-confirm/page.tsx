@@ -1,5 +1,6 @@
 "use client";
 import { useAuthActions } from "@convex-dev/auth/react";
+import { Button } from "@workspace/ui/components/button";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -94,11 +95,7 @@ const AccountConfirmPage = () => {
 									<span>企業用ダッシュボードを開く</span>
 								</div>
 							</Link>
-							<button
-								type="button"
-								onClick={handleWorkerLogin}
-								className="flex-1 bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-slate-800 dark:text-slate-200 font-medium rounded-lg px-6 py-4 shadow-md hover:shadow-lg transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] cursor-pointer flex items-center justify-center gap-2 border border-slate-300 dark:border-slate-600"
-							>
+							<Button onClick={handleWorkerLogin} variant="outline">
 								<svg
 									className="w-5 h-5"
 									fill="none"
@@ -115,7 +112,7 @@ const AccountConfirmPage = () => {
 									/>
 								</svg>
 								<span>ワーカー用ログイン画面に遷移する</span>
-							</button>
+							</Button>
 						</div>
 					</div>
 
