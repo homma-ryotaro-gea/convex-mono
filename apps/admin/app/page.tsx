@@ -56,7 +56,10 @@ function SignOutButton() {
 						void signOut()
 							.then(() => {
 								console.log("sign out success");
-								router.push("/signin");
+								// 1秒待機
+								setTimeout(() => {
+									router.push("/signin");
+								}, 1000);
 							})
 							.catch((error) => {
 								console.error("sign out error", error);
