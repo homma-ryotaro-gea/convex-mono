@@ -53,17 +53,11 @@ function SignOutButton() {
 					type="button"
 					className="bg-slate-600 hover:bg-slate-700 dark:bg-slate-700 dark:hover:bg-slate-600 text-white rounded-lg px-4 py-2 text-sm font-medium transition-all duration-200 shadow-sm hover:shadow-md cursor-pointer"
 					onClick={() =>
-						void signOut()
-							.then(() => {
-								console.log("sign out success");
-								// 1秒待機
-								setTimeout(() => {
-									router.push("/signin");
-								}, 1000);
-							})
-							.catch((error) => {
-								console.error("sign out error", error);
-							})
+						void signOut().then(() => {
+							setTimeout(() => {
+								router.push("/signin");
+							}, 1000);
+						})
 					}
 				>
 					Sign out
