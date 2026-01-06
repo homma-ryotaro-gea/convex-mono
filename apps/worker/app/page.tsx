@@ -20,11 +20,11 @@ export default function Home() {
 
 	return (
 		<>
-			<header className="sticky top-0 z-10 bg-background/80 backdrop-blur-md p-4 border-b border-slate-200 dark:border-slate-700 flex flex-row justify-between items-center shadow-sm">
+			<header className="sticky top-0 z-10 flex flex-row items-center justify-between border-slate-200 border-b bg-background/80 p-4 shadow-sm backdrop-blur-md dark:border-slate-700">
 				<div className="flex items-center gap-3">
 					<div className="flex items-center gap-3">
 						<Image src="/convex.svg" alt="Convex Logo" width={32} height={32} />
-						<div className="w-px h-8 bg-slate-300 dark:bg-slate-600"></div>
+						<div className="h-8 w-px bg-slate-300 dark:bg-slate-600" />
 						<Image
 							src="/nextjs-icon-light-background.svg"
 							alt="Next.js Logo"
@@ -46,7 +46,7 @@ export default function Home() {
 				</div>
 				<SignOutButton />
 			</header>
-			<main className="p-8 flex flex-col gap-8">
+			<main className="flex flex-col gap-8 p-8">
 				<Content />
 			</main>
 		</>
@@ -62,7 +62,7 @@ function SignOutButton() {
 			{isAuthenticated && (
 				<button
 					type="button"
-					className="bg-slate-600 hover:bg-slate-700 dark:bg-slate-700 dark:hover:bg-slate-600 text-white rounded-lg px-4 py-2 text-sm font-medium transition-all duration-200 shadow-sm hover:shadow-md cursor-pointer"
+					className="cursor-pointer rounded-lg bg-slate-600 px-4 py-2 font-medium text-sm text-white shadow-sm transition-all duration-200 hover:bg-slate-700 hover:shadow-md dark:bg-slate-700 dark:hover:bg-slate-600"
 					onClick={() =>
 						void signOut().then(() => {
 							setTimeout(() => {
@@ -90,15 +90,15 @@ function Content() {
 		return (
 			<div className="mx-auto">
 				<div className="flex items-center gap-2">
-					<div className="w-2 h-2 bg-slate-400 rounded-full animate-bounce"></div>
+					<div className="h-2 w-2 animate-bounce rounded-full bg-slate-400" />
 					<div
-						className="w-2 h-2 bg-slate-500 rounded-full animate-bounce"
+						className="h-2 w-2 animate-bounce rounded-full bg-slate-500"
 						style={{ animationDelay: "0.1s" }}
-					></div>
+					/>
 					<div
-						className="w-2 h-2 bg-slate-600 rounded-full animate-bounce"
+						className="h-2 w-2 animate-bounce rounded-full bg-slate-600"
 						style={{ animationDelay: "0.2s" }}
-					></div>
+					/>
 					<p className="ml-2 text-slate-600 dark:text-slate-400">Loading...</p>
 				</div>
 			</div>
@@ -106,45 +106,45 @@ function Content() {
 	}
 
 	return (
-		<div className="flex flex-col gap-4 max-w-lg mx-auto">
+		<div className="mx-auto flex max-w-lg flex-col gap-4">
 			<div>
-				<h2 className="font-bold text-xl text-slate-800 dark:text-slate-200">
+				<h2 className="font-bold text-slate-800 text-xl dark:text-slate-200">
 					Welcome {viewer ?? "Anonymous"}!
 				</h2>
-				<p className="text-slate-600 dark:text-slate-400 mt-2">
+				<p className="mt-2 text-slate-600 dark:text-slate-400">
 					You are signed into a demo application using Convex Auth.
 				</p>
-				<p className="text-slate-600 dark:text-slate-400 mt-1">
+				<p className="mt-1 text-slate-600 dark:text-slate-400">
 					This app can generate random numbers and store them in your Convex
 					database.
 				</p>
 			</div>
 
-			<div className="h-px bg-slate-200 dark:bg-slate-700"></div>
+			<div className="h-px bg-slate-200 dark:bg-slate-700" />
 
 			<div className="flex flex-col gap-4">
-				<h2 className="font-semibold text-xl text-slate-800 dark:text-slate-200">
+				<h2 className="font-semibold text-slate-800 text-xl dark:text-slate-200">
 					Number generator
 				</h2>
-				<p className="text-slate-600 dark:text-slate-400 text-sm">
+				<p className="text-slate-600 text-sm dark:text-slate-400">
 					Click the button below to generate a new number. The data is persisted
 					in the Convex cloud database - open this page in another window and
 					see the data sync automatically!
 				</p>
 				<button
 					type="button"
-					className="bg-slate-700 hover:bg-slate-800 dark:bg-slate-600 dark:hover:bg-slate-500 text-white text-sm font-medium px-6 py-3 rounded-lg cursor-pointer transition-all duration-200 shadow-md hover:shadow-lg hover:scale-[1.02] active:scale-[0.98]"
+					className="cursor-pointer rounded-lg bg-slate-700 px-6 py-3 font-medium text-sm text-white shadow-md transition-all duration-200 hover:scale-[1.02] hover:bg-slate-800 hover:shadow-lg active:scale-[0.98] dark:bg-slate-600 dark:hover:bg-slate-500"
 					onClick={() => {
 						void addNumber({ value: Math.floor(Math.random() * 10) });
 					}}
 				>
 					+ Generate random number
 				</button>
-				<div className="bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-600 rounded-xl p-4 shadow-sm">
-					<p className="font-semibold text-slate-800 dark:text-slate-200 mb-2">
+				<div className="rounded-xl border border-slate-300 bg-slate-100 p-4 shadow-sm dark:border-slate-600 dark:bg-slate-800">
+					<p className="mb-2 font-semibold text-slate-800 dark:text-slate-200">
 						Newest Numbers
 					</p>
-					<p className="text-slate-700 dark:text-slate-300 font-mono text-lg">
+					<p className="font-mono text-lg text-slate-700 dark:text-slate-300">
 						{numbers?.length === 0
 							? "Click the button to generate a number!"
 							: (numbers?.join(", ") ?? "...")}
@@ -152,31 +152,31 @@ function Content() {
 				</div>
 			</div>
 
-			<div className="h-px bg-slate-200 dark:bg-slate-700"></div>
+			<div className="h-px bg-slate-200 dark:bg-slate-700" />
 
 			<div className="flex flex-col gap-4">
-				<h2 className="font-semibold text-xl text-slate-800 dark:text-slate-200">
+				<h2 className="font-semibold text-slate-800 text-xl dark:text-slate-200">
 					Making changes
 				</h2>
-				<p className="text-slate-600 dark:text-slate-400 text-sm">
+				<p className="text-slate-600 text-sm dark:text-slate-400">
 					Edit{" "}
-					<code className="text-sm font-semibold font-mono bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300 px-2 py-1 rounded-md border border-slate-300 dark:border-slate-600">
+					<code className="rounded-md border border-slate-300 bg-slate-200 px-2 py-1 font-mono font-semibold text-slate-700 text-sm dark:border-slate-600 dark:bg-slate-700 dark:text-slate-300">
 						convex/myFunctions.ts
 					</code>{" "}
 					to change the backend.
 				</p>
-				<p className="text-slate-600 dark:text-slate-400 text-sm">
+				<p className="text-slate-600 text-sm dark:text-slate-400">
 					Edit{" "}
-					<code className="text-sm font-semibold font-mono bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300 px-2 py-1 rounded-md border border-slate-300 dark:border-slate-600">
+					<code className="rounded-md border border-slate-300 bg-slate-200 px-2 py-1 font-mono font-semibold text-slate-700 text-sm dark:border-slate-600 dark:bg-slate-700 dark:text-slate-300">
 						app/page.tsx
 					</code>{" "}
 					to change the frontend.
 				</p>
-				<p className="text-slate-600 dark:text-slate-400 text-sm">
+				<p className="text-slate-600 text-sm dark:text-slate-400">
 					See the{" "}
 					<Link
 						href="/server"
-						className="text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-slate-100 font-medium underline decoration-2 underline-offset-2 transition-colors"
+						className="font-medium text-slate-700 underline decoration-2 underline-offset-2 transition-colors hover:text-slate-900 dark:text-slate-300 dark:hover:text-slate-100"
 					>
 						/server route
 					</Link>{" "}
@@ -184,14 +184,14 @@ function Content() {
 				</p>
 			</div>
 
-			<div className="h-px bg-slate-200 dark:bg-slate-700"></div>
+			<div className="h-px bg-slate-200 dark:bg-slate-700" />
 
 			<div className="flex flex-col gap-4">
-				<h2 className="text-xl font-bold text-slate-800 dark:text-slate-200">
+				<h2 className="font-bold text-slate-800 text-xl dark:text-slate-200">
 					Useful resources
 				</h2>
 				<div className="flex gap-4">
-					<div className="flex flex-col gap-4 w-1/2">
+					<div className="flex w-1/2 flex-col gap-4">
 						<ResourceCard
 							title="Convex docs"
 							description="Read comprehensive documentation for all Convex features."
@@ -204,7 +204,7 @@ function Content() {
 							href="https://stack.convex.dev"
 						/>
 					</div>
-					<div className="flex flex-col gap-4 w-1/2">
+					<div className="flex w-1/2 flex-col gap-4">
 						<ResourceCard
 							title="Templates"
 							description="Browse our collection of templates to get started quickly."
@@ -235,14 +235,14 @@ function ResourceCard({
 	return (
 		<a
 			href={href}
-			className="flex flex-col gap-2 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 p-5 rounded-xl h-36 overflow-auto border border-slate-300 dark:border-slate-600 hover:border-slate-400 dark:hover:border-slate-500 shadow-sm hover:shadow-md transition-all duration-200 hover:scale-[1.02] group cursor-pointer"
+			className="group flex h-36 cursor-pointer flex-col gap-2 overflow-auto rounded-xl border border-slate-300 bg-slate-100 p-5 shadow-sm transition-all duration-200 hover:scale-[1.02] hover:border-slate-400 hover:bg-slate-200 hover:shadow-md dark:border-slate-600 dark:bg-slate-800 dark:hover:border-slate-500 dark:hover:bg-slate-700"
 			target="_blank"
 			rel="noreferrer"
 		>
-			<h3 className="text-sm font-semibold text-slate-700 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-slate-100 transition-colors">
+			<h3 className="font-semibold text-slate-700 text-sm transition-colors group-hover:text-slate-900 dark:text-slate-300 dark:group-hover:text-slate-100">
 				{title} →
 			</h3>
-			<p className="text-xs text-slate-600 dark:text-slate-400">
+			<p className="text-slate-600 text-xs dark:text-slate-400">
 				{description}
 			</p>
 		</a>

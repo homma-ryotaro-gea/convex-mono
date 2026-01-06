@@ -5,8 +5,7 @@
 	"scripts": {
 		"dev": "next dev --port 3001",
 		"build": "next build",
-		"start": "next start",
-		"lint": "eslint . --ignore-pattern \"convex/_generated/**\""
+		"start": "next start"
 	},
 	"dependencies": {
 		"@convex-dev/auth": "^0.0.90",
@@ -19,25 +18,14 @@
 		"react-dom": "^19.2.1"
 	},
 	"devDependencies": {
-		"@convex-dev/eslint-plugin": "^1.1.1",
 		"@tailwindcss/postcss": "^4.1.17",
 		"@types/node": "^24.10.4",
 		"@types/react": "^19.2.6",
 		"@types/react-dom": "^19.2.3",
 		"dotenv": "^17.2.3",
-		"eslint": "^9.39.1",
-		"eslint-config-next": "16.0.3",
-		"@workspace/eslint-config": "workspace:^",
 		"@workspace/typescript-config": "workspace:*",
 		"npm-run-all2": "^8.0.4",
-		"prettier": "^3.6.2",
 		"tailwindcss": "^4.1.17",
 		"typescript": "^5.9.3"
-	},
-	"pnpm": {
-		"onlyBuiltDependencies": [
-			"esbuild",
-			"@tailwindcss/oxide"
-		]
 	}
 }

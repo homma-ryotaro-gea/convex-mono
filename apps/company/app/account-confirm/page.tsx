@@ -14,23 +14,23 @@ const AccountConfirmPage = () => {
 	};
 
 	return (
-		<div className="min-h-screen flex items-center justify-center px-4 py-8 bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800">
+		<div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-slate-50 to-slate-100 px-4 py-8 dark:from-slate-900 dark:to-slate-800">
 			<div className="w-full max-w-2xl">
 				{/* Header */}
-				<div className="text-center mb-8">
-					<div className="flex items-center justify-center gap-4 mb-6">
+				<div className="mb-8 text-center">
+					<div className="mb-6 flex items-center justify-center gap-4">
 						<Image src="/convex.svg" alt="Convex Logo" width={48} height={48} />
 					</div>
 				</div>
 
 				{/* Main Card */}
-				<div className="bg-white dark:bg-slate-800 rounded-2xl shadow-xl border border-slate-200 dark:border-slate-700 overflow-hidden">
+				<div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-xl dark:border-slate-700 dark:bg-slate-800">
 					{/* Warning Header */}
-					<div className="bg-amber-50 dark:bg-amber-900/20 border-b border-amber-200 dark:border-amber-800 px-6 py-4">
+					<div className="border-amber-200 border-b bg-amber-50 px-6 py-4 dark:border-amber-800 dark:bg-amber-900/20">
 						<div className="flex items-start gap-4">
-							<div className="flex-shrink-0 mt-1">
+							<div className="mt-1 flex-shrink-0">
 								<svg
-									className="w-6 h-6 text-amber-600 dark:text-amber-400"
+									className="h-6 w-6 text-amber-600 dark:text-amber-400"
 									fill="none"
 									viewBox="0 0 24 24"
 									stroke="currentColor"
@@ -46,10 +46,10 @@ const AccountConfirmPage = () => {
 								</svg>
 							</div>
 							<div className="flex-1">
-								<h2 className="text-lg font-semibold text-amber-900 dark:text-amber-200 mb-1">
+								<h2 className="mb-1 font-semibold text-amber-900 text-lg dark:text-amber-200">
 									アカウントタイプの不一致
 								</h2>
-								<p className="text-sm text-amber-800 dark:text-amber-300">
+								<p className="text-amber-800 text-sm dark:text-amber-300">
 									現在ログインしているアカウントは企業用アカウントではありません。
 								</p>
 							</div>
@@ -59,7 +59,7 @@ const AccountConfirmPage = () => {
 					{/* Content */}
 					<div className="p-6">
 						<div className="mb-6">
-							<p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+							<p className="text-slate-600 text-sm leading-relaxed dark:text-slate-400">
 								企業用ダッシュボードにアクセスするには、企業アカウントでログインする必要があります。
 								ワーカー用ダッシュボードにアクセスする場合は、下記のリンクから開くことができます。
 							</p>
@@ -71,11 +71,11 @@ const AccountConfirmPage = () => {
 								href="http://localhost:3001"
 								target="_blank"
 								rel="noopener noreferrer"
-								className="flex-1 group"
+								className="group flex-1"
 							>
-								<div className="bg-slate-700 hover:bg-slate-800 dark:bg-slate-600 dark:hover:bg-slate-500 text-white font-medium rounded-lg px-6 py-4 shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer flex items-center justify-center gap-2">
+								<div className="flex cursor-pointer items-center justify-center gap-2 rounded-lg bg-slate-700 px-6 py-4 font-medium text-white shadow-md transition-all duration-200 hover:bg-slate-800 hover:shadow-lg dark:bg-slate-600 dark:hover:bg-slate-500">
 									<svg
-										className="w-5 h-5"
+										className="h-5 w-5"
 										fill="none"
 										viewBox="0 0 24 24"
 										stroke="currentColor"
@@ -95,10 +95,10 @@ const AccountConfirmPage = () => {
 							<button
 								type="button"
 								onClick={handleCompanyLogin}
-								className="flex-1 bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-slate-800 dark:text-slate-200 font-medium rounded-lg px-6 py-4 shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer flex items-center justify-center gap-2 border border-slate-300 dark:border-slate-600"
+								className="flex flex-1 cursor-pointer items-center justify-center gap-2 rounded-lg border border-slate-300 bg-slate-100 px-6 py-4 font-medium text-slate-800 shadow-md transition-all duration-200 hover:bg-slate-200 hover:shadow-lg dark:border-slate-600 dark:bg-slate-700 dark:text-slate-200 dark:hover:bg-slate-600"
 							>
 								<svg
-									className="w-5 h-5"
+									className="h-5 w-5"
 									fill="none"
 									viewBox="0 0 24 24"
 									stroke="currentColor"
@@ -118,10 +118,10 @@ const AccountConfirmPage = () => {
 					</div>
 
 					{/* Footer Info */}
-					<div className="bg-slate-50 dark:bg-slate-900/50 border-t border-slate-200 dark:border-slate-700 px-6 py-4">
+					<div className="border-slate-200 border-t bg-slate-50 px-6 py-4 dark:border-slate-700 dark:bg-slate-900/50">
 						<div className="flex items-start gap-3">
 							<svg
-								className="w-5 h-5 text-slate-500 dark:text-slate-400 flex-shrink-0 mt-0.5"
+								className="mt-0.5 h-5 w-5 flex-shrink-0 text-slate-500 dark:text-slate-400"
 								fill="none"
 								viewBox="0 0 24 24"
 								stroke="currentColor"
@@ -135,7 +135,7 @@ const AccountConfirmPage = () => {
 									d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
 								/>
 							</svg>
-							<p className="text-xs text-slate-600 dark:text-slate-400">
+							<p className="text-slate-600 text-xs dark:text-slate-400">
 								異なるアカウントタイプでログインするには、一度ログアウトしてから適切なアカウントで再度ログインしてください。
 							</p>
 						</div>

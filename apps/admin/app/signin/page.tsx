@@ -12,17 +12,17 @@ export default function SignIn() {
 	const [loading, setLoading] = useState(false);
 	const router = useRouter();
 	return (
-		<div className="flex flex-col gap-8 w-full max-w-lg mx-auto h-screen justify-center items-center px-4">
-			<div className="text-center flex flex-col items-center gap-4">
+		<div className="mx-auto flex h-screen w-full max-w-lg flex-col items-center justify-center gap-8 px-4">
+			<div className="flex flex-col items-center gap-4 text-center">
 				<div className="flex items-center gap-6">
 					<Image src="/convex.svg" alt="Convex Logo" width={90} height={90} />
 				</div>
-				<h1 className="text-3xl font-bold text-slate-800 dark:text-slate-200">
+				<h1 className="font-bold text-3xl text-slate-800 dark:text-slate-200">
 					Admin
 				</h1>
 			</div>
 			<form
-				className="flex flex-col gap-4 w-full bg-slate-100 dark:bg-slate-800 p-8 rounded-2xl shadow-xl border border-slate-300 dark:border-slate-600"
+				className="flex w-full flex-col gap-4 rounded-2xl border border-slate-300 bg-slate-100 p-8 shadow-xl dark:border-slate-600 dark:bg-slate-800"
 				onSubmit={(e) => {
 					e.preventDefault();
 					setLoading(true);
@@ -40,7 +40,7 @@ export default function SignIn() {
 				}}
 			>
 				<input
-					className="bg-white dark:bg-slate-900 text-foreground rounded-lg p-3 border border-slate-300 dark:border-slate-600 focus:border-slate-500 dark:focus:border-slate-400 focus:ring-2 focus:ring-slate-200 dark:focus:ring-slate-700 outline-none transition-all placeholder:text-slate-400"
+					className="rounded-lg border border-slate-300 bg-white p-3 text-foreground outline-none transition-all placeholder:text-slate-400 focus:border-slate-500 focus:ring-2 focus:ring-slate-200 dark:border-slate-600 dark:bg-slate-900 dark:focus:border-slate-400 dark:focus:ring-slate-700"
 					type="email"
 					name="email"
 					placeholder="Email"
@@ -48,7 +48,7 @@ export default function SignIn() {
 				/>
 				<div className="flex flex-col gap-1">
 					<input
-						className="bg-white dark:bg-slate-900 text-foreground rounded-lg p-3 border border-slate-300 dark:border-slate-600 focus:border-slate-500 dark:focus:border-slate-400 focus:ring-2 focus:ring-slate-200 dark:focus:ring-slate-700 outline-none transition-all placeholder:text-slate-400"
+						className="rounded-lg border border-slate-300 bg-white p-3 text-foreground outline-none transition-all placeholder:text-slate-400 focus:border-slate-500 focus:ring-2 focus:ring-slate-200 dark:border-slate-600 dark:bg-slate-900 dark:focus:border-slate-400 dark:focus:ring-slate-700"
 						type="password"
 						name="password"
 						placeholder="Password"
@@ -56,14 +56,14 @@ export default function SignIn() {
 						required
 					/>
 					{flow === "signUp" && (
-						<p className="text-xs text-slate-500 dark:text-slate-400 px-1">
+						<p className="px-1 text-slate-500 text-xs dark:text-slate-400">
 							Password must be at least 8 characters
 						</p>
 					)}
 				</div>
 				{flow === "signUp" && (
 					<select
-						className="bg-white dark:bg-slate-900 text-foreground rounded-lg p-3 border border-slate-300 dark:border-slate-600 focus:border-slate-500 dark:focus:border-slate-400 focus:ring-2 focus:ring-slate-200 dark:focus:ring-slate-700 outline-none transition-all placeholder:text-slate-400"
+						className="rounded-lg border border-slate-300 bg-white p-3 text-foreground outline-none transition-all placeholder:text-slate-400 focus:border-slate-500 focus:ring-2 focus:ring-slate-200 dark:border-slate-600 dark:bg-slate-900 dark:focus:border-slate-400 dark:focus:ring-slate-700"
 						name="role"
 						required
 					>
@@ -74,13 +74,13 @@ export default function SignIn() {
 					</select>
 				)}
 				<button
-					className="bg-slate-700 hover:bg-slate-800 dark:bg-slate-600 dark:hover:bg-slate-500 text-white font-semibold rounded-lg py-3 shadow-md hover:shadow-lg transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+					className="cursor-pointer rounded-lg bg-slate-700 py-3 font-semibold text-white shadow-md transition-all duration-200 hover:scale-[1.02] hover:bg-slate-800 hover:shadow-lg active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:scale-100 dark:bg-slate-600 dark:hover:bg-slate-500"
 					type="submit"
 					disabled={loading}
 				>
 					{loading ? "Loading..." : flow === "signIn" ? "Sign in" : "Sign up"}
 				</button>
-				<div className="flex flex-row gap-2 text-sm justify-center">
+				<div className="flex flex-row justify-center gap-2 text-sm">
 					<span className="text-slate-600 dark:text-slate-400">
 						{flow === "signIn"
 							? "Don't have an account?"
@@ -88,15 +88,15 @@ export default function SignIn() {
 					</span>
 					<button
 						type="button"
-						className="text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-slate-100 font-medium underline decoration-2 underline-offset-2 hover:no-underline cursor-pointer transition-colors"
+						className="cursor-pointer font-medium text-slate-700 underline decoration-2 underline-offset-2 transition-colors hover:text-slate-900 hover:no-underline dark:text-slate-300 dark:hover:text-slate-100"
 						onClick={() => setFlow(flow === "signIn" ? "signUp" : "signIn")}
 					>
 						{flow === "signIn" ? "Sign up" : "Sign in"}
 					</button>
 				</div>
 				{error && (
-					<div className="bg-rose-500/10 border border-rose-500/30 dark:border-rose-500/50 rounded-lg p-4">
-						<p className="text-rose-700 dark:text-rose-300 font-medium text-sm break-words">
+					<div className="rounded-lg border border-rose-500/30 bg-rose-500/10 p-4 dark:border-rose-500/50">
+						<p className="break-words font-medium text-rose-700 text-sm dark:text-rose-300">
 							Error: {error}
 						</p>
 					</div>
