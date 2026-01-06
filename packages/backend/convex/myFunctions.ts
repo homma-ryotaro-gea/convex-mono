@@ -1,10 +1,11 @@
 import { getAuthUserId } from "@convex-dev/auth/server";
 import { v } from "convex/values";
-import { api } from "./_generated/api";
-import { action, mutation, query } from "./_generated/server";
+import { api } from "./_generated/api.js";
+import { action, mutation, query } from "./_generated/server.js";
 
 // Write your Convex functions in any file inside this directory (`convex`).
 // See https://docs.convex.dev/functions for more.
+
 export const getUser = query({
 	args: {},
 	handler: async (ctx) => {
@@ -15,6 +16,7 @@ export const getUser = query({
 		return await ctx.db.get("users", userId);
 	},
 });
+
 // You can read data from the database via a query:
 export const listNumbers = query({
 	// Validators for arguments.

@@ -1,22 +1,27 @@
 "use client";
 
 import { useAuthActions } from "@convex-dev/auth/react";
+import { api } from "@workspace/backend/convex/_generated/api";
 import { useConvexAuth, useMutation, useQuery } from "convex/react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
-import { api } from "../convex/_generated/api";
 
 export default function Home() {
 	const router = useRouter();
 	const user = useQuery(api.myFunctions.getUser);
 
 	useEffect(() => {
-		if (user?.role === "worker") {
+		if (user && user.role !== "company") {
 			router.push("/account-confirm");
 		}
 	}, [user, router]);
+
+	if (!user) {
+		return null;
+	}
+
 	return (
 		<>
 			<header className="sticky top-0 z-10 bg-background/80 backdrop-blur-md p-4 border-b border-slate-200 dark:border-slate-700 flex flex-row justify-between items-center shadow-sm">
