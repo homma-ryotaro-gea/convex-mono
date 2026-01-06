@@ -18,7 +18,7 @@ export default function SignIn() {
 					<Image src="/convex.svg" alt="Convex Logo" width={90} height={90} />
 				</div>
 				<h1 className="text-3xl font-bold text-slate-800 dark:text-slate-200">
-					Company
+					Admin
 				</h1>
 			</div>
 			<form
