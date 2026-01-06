@@ -1,6 +1,5 @@
 "use client";
 import { useAuthActions } from "@convex-dev/auth/react";
-import { Button } from "@workspace/ui/components/button";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -8,7 +7,7 @@ import { useRouter } from "next/navigation";
 const AccountConfirmPage = () => {
 	const router = useRouter();
 	const { signOut } = useAuthActions();
-	const handleWorkerLogin = () => {
+	const handleAdminLogin = () => {
 		void signOut().then(() => {
 			router.push("/signin");
 		});
@@ -51,7 +50,9 @@ const AccountConfirmPage = () => {
 									アカウントタイプの不一致
 								</h2>
 								<p className="text-sm text-amber-800 dark:text-amber-300">
-									現在ログインしているアカウントはワーカー用アカウントではありません。
+									現在ログインしているアカウントは企業またはワーカー用です。
+									<br />
+									このアカウントでは管理画面にアクセスできません。
 								</p>
 							</div>
 						</div>
@@ -61,15 +62,15 @@ const AccountConfirmPage = () => {
 					<div className="p-6">
 						<div className="mb-6">
 							<p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
-								ワーカー用ダッシュボードにアクセスするには、ワーカーアカウントでログインする必要があります。
-								企業用ダッシュボードにアクセスする場合は、下記のリンクから開くことができます。
+								管理画面にアクセスするには、管理アカウントでログインする必要があります。
+								企業用またはワーカー用ダッシュボードにアクセスする場合は、下記のリンクから開くことができます。
 							</p>
 						</div>
 
 						{/* Action Buttons */}
 						<div className="flex flex-col gap-4">
 							<Link
-								href="http://localhost:4001"
+								href="http://localhost:3001"
 								target="_blank"
 								rel="noopener noreferrer"
 								className="flex-1 group"
@@ -93,7 +94,36 @@ const AccountConfirmPage = () => {
 									<span>企業用ダッシュボードを開く</span>
 								</div>
 							</Link>
-							<Button onClick={handleWorkerLogin} variant="outline">
+							<Link
+								href="http://localhost:3001"
+								target="_blank"
+								rel="noopener noreferrer"
+								className="flex-1 group"
+							>
+								<div className="bg-slate-700 hover:bg-slate-800 dark:bg-slate-600 dark:hover:bg-slate-500 text-white font-medium rounded-lg px-6 py-4 shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer flex items-center justify-center gap-2">
+									<svg
+										className="w-5 h-5"
+										fill="none"
+										viewBox="0 0 24 24"
+										stroke="currentColor"
+										strokeWidth={2}
+										aria-label="外部リンクアイコン"
+									>
+										<title>外部リンクアイコン</title>
+										<path
+											strokeLinecap="round"
+											strokeLinejoin="round"
+											d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+										/>
+									</svg>
+									<span>ワーカー用ダッシュボードを開く</span>
+								</div>
+							</Link>
+							<button
+								type="button"
+								onClick={handleAdminLogin}
+								className="flex-1 bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-slate-800 dark:text-slate-200 font-medium rounded-lg px-6 py-4 shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer flex items-center justify-center gap-2 border border-slate-300 dark:border-slate-600"
+							>
 								<svg
 									className="w-5 h-5"
 									fill="none"
@@ -109,8 +139,8 @@ const AccountConfirmPage = () => {
 										d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
 									/>
 								</svg>
-								<span>ワーカー用ログイン画面に遷移する</span>
-							</Button>
+								<span>運営ログイン画面に遷移する</span>
+							</button>
 						</div>
 					</div>
 
