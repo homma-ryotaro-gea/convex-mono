@@ -8,18 +8,6 @@
 - **ロール管理**: `admin`、`worker`、`company` の3つのロールをサポート
 - **プロファイル管理**: ユーザープロファイルと本人確認機能
 
-## セットアップ
-
-### 必要な環境変数
-
-`.env.local` ファイルを作成し、以下の環境変数を設定してください：
-
-```bash
-CONVEX_DEPLOY_KEY=your_deploy_key
-NEXT_PUBLIC_CONVEX_URL=your_convex_url
-CONVEX_SITE_URL=your_site_url
-```
-
 ### 開発環境の起動
 
 ```bash
