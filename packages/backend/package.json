@@ -5,7 +5,7 @@
 	"type": "module",
 	"private": true,
 	"scripts": {
-		"dev": "convex dev"
+		"dev": "convex dev --until-success && node setup.mjs --once"
 	},
 	"packageManager": "pnpm@10.4.1",
 	"dependencies": {
